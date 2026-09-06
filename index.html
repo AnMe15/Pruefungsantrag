@@ -295,14 +295,15 @@
   }
   .rm-row.now{ border-color:rgba(255,128,0,0.5); background:linear-gradient(165deg, var(--surface) 0%, rgba(255,128,0,0.08) 160%); }
   @media (max-width:560px){ .rm-row{ grid-template-columns:1fr; } }
-  .rm-tag{ font-family:"Oswald",sans-serif; font-weight:700; font-size:13px; color:var(--orange); }
-  .rm-tag small{ display:block; font-family:"Cabin",sans-serif; font-weight:400; font-style:italic; color:var(--steel); font-size:11px; margin-top:2px; }
-  .rm-body h4{ margin:0 0 6px; font-family:"Oswald",sans-serif; font-size:15px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-  .rm-badge{
-    font-family:"Oswald",sans-serif; font-weight:600; font-size:9.5px; letter-spacing:0.06em; text-transform:uppercase;
-    padding:3px 9px; border-radius:999px; background:var(--orange); color:var(--orange-ink);
+  .rm-tag{ display:flex; flex-direction:column; height:100%; }
+  .rm-num{ font-family:"Oswald",sans-serif; font-weight:700; font-size:13px; color:var(--orange); }
+  .rm-status-wrap{ flex:1; display:flex; align-items:center; }
+  .rm-status{
+    display:inline-block; font-family:"Oswald",sans-serif; font-weight:700; font-size:14px; letter-spacing:0.02em;
+    padding:8px 14px; border-radius:8px; background:var(--orange); color:var(--orange-ink);
   }
-  .rm-badge-later{ background:transparent; border:1px solid var(--surface-border); color:var(--steel); }
+  .rm-status-later{ background:transparent; border:1.5px solid var(--surface-border); color:var(--steel); font-weight:600; }
+  .rm-body h4{ margin:0 0 6px; font-family:"Oswald",sans-serif; font-size:15px; }
   .rm-body p{ margin:0; font-size:13.5px; color:var(--ink-dim); line-height:1.55; }
 
   /* ---- CTA ---- */
@@ -370,7 +371,7 @@
   .fb-toggle{ display:flex; gap:10px; margin-bottom:20px; }
   .fb-toggle button{
     flex:1; cursor:pointer; font-family:"Oswald",sans-serif; font-weight:600; font-size:14px; letter-spacing:0.04em;
-    padding:13px; border-radius:10px; border:1.5px solid var(--surface-border); background:var(--navy-deep); color:var(--ink-dim);
+    padding:13px; border-radius:10px; border:1.5px solid var(--surface-border); background:var(--navy-deep); color:var(--ink);
     transition:all 150ms ease;
   }
   .fb-toggle button.is-active[data-val="approve"]{ background:var(--orange); border-color:var(--orange); color:var(--orange-ink); }
@@ -505,16 +506,16 @@
   <h2 class="reveal">Drei Ebenen, keine Überraschungen.</h2>
   <div class="roadmap">
     <div class="rm-row now reveal">
-      <div class="rm-tag">Ebene 1<small>Prüfungsobjekt</small></div>
-      <div class="rm-body"><h4>Technisch bombenfest, mit Persönlichkeit <span class="rm-badge">Wird geprüft</span></h4><p>Login, Datenbank, alle drei Missionen im Akkordeon, echte Fotos, Fortschritt, Konfetti bei Abschluss. Vollständig funktionsfähig — das hier ist der Gegenstand dieser Abschlussarbeit.</p></div>
+      <div class="rm-tag"><div class="rm-num">Ebene 1</div><div class="rm-status-wrap"><span class="rm-status">Prüfungsobjekt</span></div></div>
+      <div class="rm-body"><h4>Technisch bombenfest, mit Persönlichkeit</h4><p>Login, Datenbank, alle drei Missionen im Akkordeon, echte Fotos, Fortschritt, Konfetti bei Abschluss. Vollständig funktionsfähig — das hier ist der Gegenstand dieser Abschlussarbeit.</p></div>
     </div>
     <div class="rm-row reveal">
-      <div class="rm-tag">Ebene 2<small>Ausbaustufe</small></div>
-      <div class="rm-body"><h4>Frag Lavia &amp; mehr Tiefe <span class="rm-badge rm-badge-later">Ausblick</span></h4><p>KI-Wissensassistent auf eigener Datenbasis, erweiterte Gamification, Sprachausgabe. Offene-Fragen-Protokoll: Was Lavia nicht beantworten kann, landet automatisch auf einer Liste zum Nachpflegen &mdash; damit die Wissensbasis mit dem echten Betrieb mitwächst, statt zu veralten. Noch nicht Teil dieser Abgabe.</p></div>
+      <div class="rm-tag"><div class="rm-num">Ebene 2</div><div class="rm-status-wrap"><span class="rm-status rm-status-later">Ausbaustufe</span></div></div>
+      <div class="rm-body"><h4>Frag Lavia &amp; mehr Tiefe</h4><p>KI-Wissensassistent auf eigener Datenbasis, erweiterte Gamification, Sprachausgabe. Offene-Fragen-Protokoll: Was Lavia nicht beantworten kann, landet automatisch auf einer Liste zum Nachpflegen &mdash; damit die Wissensbasis mit dem echten Betrieb mitwächst, statt zu veralten. Noch nicht Teil dieser Abgabe.</p></div>
     </div>
     <div class="rm-row reveal">
-      <div class="rm-tag">Ebene 3<small>Vision</small></div>
-      <div class="rm-body"><h4>Rollout auf alle Bereiche <span class="rm-badge rm-badge-later">Ausblick</span></h4><p>Ein digitaler Guide pro Abteilung &mdash; Hotel, Restaurant, Wellness, Sportzentrum &mdash; nach demselben Prinzip. Noch nicht Teil dieser Abgabe.</p></div>
+      <div class="rm-tag"><div class="rm-num">Ebene 3</div><div class="rm-status-wrap"><span class="rm-status rm-status-later">Vision</span></div></div>
+      <div class="rm-body"><h4>Rollout auf alle Bereiche</h4><p>Ein digitaler Guide pro Abteilung &mdash; Hotel, Restaurant, Wellness, Sportzentrum &mdash; nach demselben Prinzip. Noch nicht Teil dieser Abgabe.</p></div>
     </div>
   </div>
 </section>
